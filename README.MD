@@ -58,3 +58,19 @@
    ```bash
    git clone https://github.com/ваш-логин/ecommerce-mvc.git
    cd ecommerce-mvc
+
+2. **Установите зависимости**
+   ```bash
+   npm install
+
+3. **Запустите MongoDB**
+   ```bash
+   Убедитесь, что служба MongoDB активна:
+   Windows: запустите mongod.exe с указанием пути к dbpath.
+   macOS/Linux: используйте brew services start mongodb-community или sudo systemctl start mongod.
+
+4. **Запустите приложение**
+   ```bash
+   node src/app.js
+
+### Приложение будет доступно по адресу: http://localhost:3000
