@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+</head>
+<body>
+  <h2><%= title %></h2>
+  <form method="POST" action="<%= user ? '/users/' + user._id + '?_method=PUT' : '/users' %>">
+    <input type="hidden" name="_method" value="<%= user ? 'PUT' : 'POST' %>">
+    
+    <label>Имя:<br>
+      <input type="text" name="name" value="<%= user ? user.name : '' %>" required>
+    </label><br><br>
+    
+    <label>Email:<br>
+      <input type="email" name="email" value="<%= user ? user.email : '' %>" required>
+    </label><br><br>
+    
+    <button type="submit">Сохранить</button>
+  </form>
+  <br>
+  <a href="/users">← Отмена</a>
+</body>
+</html>

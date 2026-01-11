@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Список пользователей</title>
+</head>
+<body>
+  <h2>Пользователи</h2>
+  <a href="/users/new">➕ Добавить</a>
+  <table border="1" style="margin-top: 10px;">
+    <thead>
+      <tr><th>Имя</th><th>Email</th><th>Действия</th></tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td>
+            <a href="/users/<%= user._id %>/edit">✏️</a>
+            <form action="/users/<%= user._id %>?_method=DELETE" method="POST" style="display:inline;">
+              <button type="submit">🗑️</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <br>
+  <a href="/">← Назад</a>
+</body>
+</html>
